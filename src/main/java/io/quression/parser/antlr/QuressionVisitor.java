@@ -151,35 +151,17 @@ public interface QuressionVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitOrder(QuressionParser.OrderContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link QuressionParser#group}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitGroup(QuressionParser.GroupContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#limit}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLimit(QuressionParser.LimitContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link QuressionParser#contact}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitContact(QuressionParser.ContactContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link QuressionParser#function}.
+	 * Visit a parse tree produced by {@link QuressionParser#sort}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunction(QuressionParser.FunctionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#param}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParam(QuressionParser.ParamContext ctx);
+	T visitSort(QuressionParser.SortContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link QuressionParser#value}.
 	 * @param ctx the parse tree
@@ -187,29 +169,29 @@ public interface QuressionVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitValue(QuressionParser.ValueContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link QuressionParser#total}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTotal(QuressionParser.TotalContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#size}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSize(QuressionParser.SizeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#integer}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInteger(QuressionParser.IntegerContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link QuressionParser#variable}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitVariable(QuressionParser.VariableContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link QuressionParser#param}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParam(QuressionParser.ParamContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link QuressionParser#function}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunction(QuressionParser.FunctionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link QuressionParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType(QuressionParser.TypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link QuressionParser#constant}.
 	 * @param ctx the parse tree
@@ -222,6 +204,18 @@ public interface QuressionVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRange(QuressionParser.RangeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link QuressionParser#min}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMin(QuressionParser.MinContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link QuressionParser#max}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMax(QuressionParser.MaxContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link QuressionParser#collection}.
 	 * @param ctx the parse tree

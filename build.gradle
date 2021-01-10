@@ -16,6 +16,6 @@ dependencies {
 }
 
 generateGrammarSource {
-    outputDirectory = file("src/main/java/com/quression/parser/antlr")
+    outputDirectory = file("src/main/java/io/quression/parser/antlr")
     arguments += ['-visitor']
 }

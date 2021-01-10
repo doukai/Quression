@@ -240,26 +240,6 @@ public interface QuressionListener extends ParseTreeListener {
 	 */
 	void exitOrder(QuressionParser.OrderContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link QuressionParser#group}.
-	 * @param ctx the parse tree
-	 */
-	void enterGroup(QuressionParser.GroupContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#group}.
-	 * @param ctx the parse tree
-	 */
-	void exitGroup(QuressionParser.GroupContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#limit}.
-	 * @param ctx the parse tree
-	 */
-	void enterLimit(QuressionParser.LimitContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#limit}.
-	 * @param ctx the parse tree
-	 */
-	void exitLimit(QuressionParser.LimitContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link QuressionParser#contact}.
 	 * @param ctx the parse tree
 	 */
@@ -270,25 +250,15 @@ public interface QuressionListener extends ParseTreeListener {
 	 */
 	void exitContact(QuressionParser.ContactContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link QuressionParser#function}.
+	 * Enter a parse tree produced by {@link QuressionParser#sort}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunction(QuressionParser.FunctionContext ctx);
+	void enterSort(QuressionParser.SortContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link QuressionParser#function}.
+	 * Exit a parse tree produced by {@link QuressionParser#sort}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunction(QuressionParser.FunctionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#param}.
-	 * @param ctx the parse tree
-	 */
-	void enterParam(QuressionParser.ParamContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#param}.
-	 * @param ctx the parse tree
-	 */
-	void exitParam(QuressionParser.ParamContext ctx);
+	void exitSort(QuressionParser.SortContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link QuressionParser#value}.
 	 * @param ctx the parse tree
@@ -300,36 +270,6 @@ public interface QuressionListener extends ParseTreeListener {
 	 */
 	void exitValue(QuressionParser.ValueContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link QuressionParser#total}.
-	 * @param ctx the parse tree
-	 */
-	void enterTotal(QuressionParser.TotalContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#total}.
-	 * @param ctx the parse tree
-	 */
-	void exitTotal(QuressionParser.TotalContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#size}.
-	 * @param ctx the parse tree
-	 */
-	void enterSize(QuressionParser.SizeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#size}.
-	 * @param ctx the parse tree
-	 */
-	void exitSize(QuressionParser.SizeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#integer}.
-	 * @param ctx the parse tree
-	 */
-	void enterInteger(QuressionParser.IntegerContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#integer}.
-	 * @param ctx the parse tree
-	 */
-	void exitInteger(QuressionParser.IntegerContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link QuressionParser#variable}.
 	 * @param ctx the parse tree
 	 */
@@ -339,6 +279,36 @@ public interface QuressionListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVariable(QuressionParser.VariableContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link QuressionParser#param}.
+	 * @param ctx the parse tree
+	 */
+	void enterParam(QuressionParser.ParamContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link QuressionParser#param}.
+	 * @param ctx the parse tree
+	 */
+	void exitParam(QuressionParser.ParamContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link QuressionParser#function}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction(QuressionParser.FunctionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link QuressionParser#function}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction(QuressionParser.FunctionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link QuressionParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void enterType(QuressionParser.TypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link QuressionParser#type}.
+	 * @param ctx the parse tree
+	 */
+	void exitType(QuressionParser.TypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link QuressionParser#constant}.
 	 * @param ctx the parse tree
@@ -359,6 +329,26 @@ public interface QuressionListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitRange(QuressionParser.RangeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link QuressionParser#min}.
+	 * @param ctx the parse tree
+	 */
+	void enterMin(QuressionParser.MinContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link QuressionParser#min}.
+	 * @param ctx the parse tree
+	 */
+	void exitMin(QuressionParser.MinContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link QuressionParser#max}.
+	 * @param ctx the parse tree
+	 */
+	void enterMax(QuressionParser.MaxContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link QuressionParser#max}.
+	 * @param ctx the parse tree
+	 */
+	void exitMax(QuressionParser.MaxContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link QuressionParser#collection}.
 	 * @param ctx the parse tree

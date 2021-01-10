@@ -2,30 +2,30 @@ package io.quression.parser.define.value;
 
 public class Range implements IValue {
 
-    private IValue start;
+    private RangeValue min;
 
-    private IValue end;
+    private RangeValue max;
 
-    public Range(IValue start, IValue end) {
-        this.start = start;
-        this.end = end;
+    public Range(RangeValue min, RangeValue max) {
+        this.min = min;
+        this.max = max;
     }
 
-    public IValue getStart() {
-        return start;
+    public IValue getMin() {
+        return min;
     }
 
-    public Range setStart(IValue start) {
-        this.start = start;
+    public Range setMin(RangeValue min) {
+        this.min = min;
         return this;
     }
 
-    public IValue getEnd() {
-        return end;
+    public IValue getMax() {
+        return max;
     }
 
-    public Range setEnd(IValue end) {
-        this.end = end;
+    public Range setMax(RangeValue max) {
+        this.max = max;
         return this;
     }
 }

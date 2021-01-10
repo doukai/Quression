@@ -6,7 +6,7 @@ grammar Quression;
 
 expression: (block) (';' block)*;
 
-block: filter | group | order | limit | function;
+block: filter | order | function;
 
 filter: condition (contact condition)*;
 
@@ -49,29 +49,28 @@ nin: field '!@' collection;
 isn: field '^';
 nn: field '!^';
 
-order: field ASC | field DESC;
-group: field '#';
-limit: total ':' size;
+order: field sort (',' field sort)*;
 
 contact: AND | OR;
+sort: ASC | DESC;
 
-function: IDENTIFICATION_VARIABLE '(' (param) (',' param)* ')';
-
-param: field | value;
-
-value: variable | constant | function;
-
-total: integer;
-
-size: integer;
-
-integer: NUMBER | variable;
+value: variable | constant | function | type;
 
 variable: '$' IDENTIFICATION_VARIABLE;
 
+param: field | value;
+
+function: IDENTIFICATION_VARIABLE '(' (param) (',' param)* ')';
+
+type: '@' IDENTIFICATION_VARIABLE '(' (constant) (',' constant)* ')';
+
 constant: STRING | NUMBER | ENUM | BOOLEAN | NULL;
 
-range: '[' value '~' value ']';
+range: '[' min '~' max ']';
+
+min: value ( '!' );
+
+max: value ( '!' );
 
 collection: '[' (item) (',' item)* ']';
 
@@ -86,12 +85,7 @@ field:
 subfield: IDENTIFICATION_VARIABLE | variable;
 
 IDENTIFICATION_VARIABLE:
-	('a' .. 'z' | 'A' .. 'Z' | '_') (
-		'a' .. 'z'
-		| 'A' .. 'Z'
-		| '0' .. '9'
-		| '_'
-	)*;
+	('a' .. 'z' | 'A' .. 'Z' | '_') ('a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*;
 AND: '&';
 OR: '|';
 

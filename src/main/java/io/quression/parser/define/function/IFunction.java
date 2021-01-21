@@ -1,8 +1,12 @@
 package io.quression.parser.define.function;
 
-import io.quression.parser.define.value.IValue;
+import io.quression.parser.define.item.IItem;
 
-public interface IFunction<T extends IValue> extends IValue {
+public interface IFunction<T extends IItem> extends IItem {
 
-    T execute(Param... params);
+    String getName();
+
+    boolean verification(String functionName);
+
+    T execute(IItem... items);
 }

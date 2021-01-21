@@ -10,15 +10,15 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface QuressionListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link QuressionParser#collection}.
+	 * Enter a parse tree produced by {@link QuressionParser#list}.
 	 * @param ctx the parse tree
 	 */
-	void enterCollection(QuressionParser.CollectionContext ctx);
+	void enterList(QuressionParser.ListContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link QuressionParser#collection}.
+	 * Exit a parse tree produced by {@link QuressionParser#list}.
 	 * @param ctx the parse tree
 	 */
-	void exitCollection(QuressionParser.CollectionContext ctx);
+	void exitList(QuressionParser.ListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link QuressionParser#items}.
 	 * @param ctx the parse tree
@@ -30,6 +30,16 @@ public interface QuressionListener extends ParseTreeListener {
 	 */
 	void exitItems(QuressionParser.ItemsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link QuressionParser#item}.
+	 * @param ctx the parse tree
+	 */
+	void enterItem(QuressionParser.ItemContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link QuressionParser#item}.
+	 * @param ctx the parse tree
+	 */
+	void exitItem(QuressionParser.ItemContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link QuressionParser#function}.
 	 * @param ctx the parse tree
 	 */
@@ -40,35 +50,15 @@ public interface QuressionListener extends ParseTreeListener {
 	 */
 	void exitFunction(QuressionParser.FunctionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link QuressionParser#value}.
+	 * Enter a parse tree produced by {@link QuressionParser#quote}.
 	 * @param ctx the parse tree
 	 */
-	void enterValue(QuressionParser.ValueContext ctx);
+	void enterQuote(QuressionParser.QuoteContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link QuressionParser#value}.
+	 * Exit a parse tree produced by {@link QuressionParser#quote}.
 	 * @param ctx the parse tree
 	 */
-	void exitValue(QuressionParser.ValueContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#collectionValue}.
-	 * @param ctx the parse tree
-	 */
-	void enterCollectionValue(QuressionParser.CollectionValueContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#collectionValue}.
-	 * @param ctx the parse tree
-	 */
-	void exitCollectionValue(QuressionParser.CollectionValueContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#variable}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariable(QuressionParser.VariableContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#variable}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariable(QuressionParser.VariableContext ctx);
+	void exitQuote(QuressionParser.QuoteContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link QuressionParser#constant}.
 	 * @param ctx the parse tree
@@ -80,33 +70,13 @@ public interface QuressionListener extends ParseTreeListener {
 	 */
 	void exitConstant(QuressionParser.ConstantContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link QuressionParser#functionName}.
+	 * Enter a parse tree produced by {@link QuressionParser#attribute}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunctionName(QuressionParser.FunctionNameContext ctx);
+	void enterAttribute(QuressionParser.AttributeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link QuressionParser#functionName}.
+	 * Exit a parse tree produced by {@link QuressionParser#attribute}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunctionName(QuressionParser.FunctionNameContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#field}.
-	 * @param ctx the parse tree
-	 */
-	void enterField(QuressionParser.FieldContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#field}.
-	 * @param ctx the parse tree
-	 */
-	void exitField(QuressionParser.FieldContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#subfield}.
-	 * @param ctx the parse tree
-	 */
-	void enterSubfield(QuressionParser.SubfieldContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#subfield}.
-	 * @param ctx the parse tree
-	 */
-	void exitSubfield(QuressionParser.SubfieldContext ctx);
+	void exitAttribute(QuressionParser.AttributeContext ctx);
 }

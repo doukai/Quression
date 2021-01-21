@@ -18,13 +18,13 @@ public class QuressionBaseListener implements QuressionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCollection(QuressionParser.CollectionContext ctx) { }
+	@Override public void enterList(QuressionParser.ListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCollection(QuressionParser.CollectionContext ctx) { }
+	@Override public void exitList(QuressionParser.ListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -42,6 +42,18 @@ public class QuressionBaseListener implements QuressionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterItem(QuressionParser.ItemContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitItem(QuressionParser.ItemContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFunction(QuressionParser.FunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -54,37 +66,13 @@ public class QuressionBaseListener implements QuressionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValue(QuressionParser.ValueContext ctx) { }
+	@Override public void enterQuote(QuressionParser.QuoteContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValue(QuressionParser.ValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterCollectionValue(QuressionParser.CollectionValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCollectionValue(QuressionParser.CollectionValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterVariable(QuressionParser.VariableContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVariable(QuressionParser.VariableContext ctx) { }
+	@Override public void exitQuote(QuressionParser.QuoteContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -102,37 +90,13 @@ public class QuressionBaseListener implements QuressionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionName(QuressionParser.FunctionNameContext ctx) { }
+	@Override public void enterAttribute(QuressionParser.AttributeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionName(QuressionParser.FunctionNameContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterField(QuressionParser.FieldContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitField(QuressionParser.FieldContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSubfield(QuressionParser.SubfieldContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSubfield(QuressionParser.SubfieldContext ctx) { }
+	@Override public void exitAttribute(QuressionParser.AttributeContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

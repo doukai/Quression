@@ -13,11 +13,11 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface QuressionVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link QuressionParser#collection}.
+	 * Visit a parse tree produced by {@link QuressionParser#list}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCollection(QuressionParser.CollectionContext ctx);
+	T visitList(QuressionParser.ListContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link QuressionParser#items}.
 	 * @param ctx the parse tree
@@ -25,29 +25,23 @@ public interface QuressionVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitItems(QuressionParser.ItemsContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link QuressionParser#item}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitItem(QuressionParser.ItemContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link QuressionParser#function}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitFunction(QuressionParser.FunctionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link QuressionParser#value}.
+	 * Visit a parse tree produced by {@link QuressionParser#quote}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitValue(QuressionParser.ValueContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#collectionValue}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCollectionValue(QuressionParser.CollectionValueContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#variable}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariable(QuressionParser.VariableContext ctx);
+	T visitQuote(QuressionParser.QuoteContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link QuressionParser#constant}.
 	 * @param ctx the parse tree
@@ -55,21 +49,9 @@ public interface QuressionVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitConstant(QuressionParser.ConstantContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link QuressionParser#functionName}.
+	 * Visit a parse tree produced by {@link QuressionParser#attribute}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunctionName(QuressionParser.FunctionNameContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#field}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitField(QuressionParser.FieldContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#subfield}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSubfield(QuressionParser.SubfieldContext ctx);
+	T visitAttribute(QuressionParser.AttributeContext ctx);
 }

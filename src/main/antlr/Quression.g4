@@ -4,37 +4,37 @@ grammar Quression;
     package io.quression.parser.antlr;
 }
 
-collection: '(' items? ')';
+list: '(' items? ')';
 
-items: value (',' value)*;
+items: item (ITEM_SEPARATOR item)*;
 
-function: '(' functionName (',' value)* ')';
+item: constant | attribute | function | list | quote;
 
-value: constant | variable | function | field | collectionValue;
+function: '(' IDENTIFICATION_VARIABLE items? ')';
 
-collectionValue: '\'' collection;
+quote: '\'' list;
 
-variable: '$' IDENTIFICATION_VARIABLE;
+constant: STRING | NUMBER | BOOLEAN | NULL;
 
-constant: STRING | NUMBER | ENUM | BOOLEAN | NULL;
+attribute: IDENTIFICATION_VARIABLE | IDENTIFICATION_VARIABLE ATTRIBUTE_SEPARATOR IDENTIFICATION_VARIABLE;
 
-functionName: IDENTIFICATION_VARIABLE;
+IDENTIFICATION_VARIABLE: ('a' .. 'z' | 'A' .. 'Z' | '_') ('a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*;
 
-field:
-	IDENTIFICATION_VARIABLE
-	| variable
-	| IDENTIFICATION_VARIABLE '.' subfield
-	| variable '.' subfield;
+ITEM_SEPARATOR: ' ' | ',';
 
-subfield: IDENTIFICATION_VARIABLE | variable;
+ATTRIBUTE_SEPARATOR: '-' | '.';
 
-IDENTIFICATION_VARIABLE:
-	('a' .. 'z' | 'A' .. 'Z' | '_') ('a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*;
 STRING: '"' (ESC | SAFECODEPOINT)* '"';
+
 NUMBER: '-'? INT ('.' [0-9]+)? EXP?;
-ENUM: IDENTIFICATION_VARIABLE '.' IDENTIFICATION_VARIABLE;
-BOOLEAN: 'true' | 'false';
-NULL: 'null';
+
+BOOLEAN: TRUE | FALSE;
+
+TRUE: '#t' | 'true';
+
+FALSE: '#f' | 'false';
+
+NULL: '\'()' | 'null';
 
 fragment ESC: '\\' (["\\/bfnrt] | UNICODE);
 

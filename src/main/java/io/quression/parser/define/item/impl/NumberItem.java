@@ -2,19 +2,19 @@ package io.quression.parser.define.item.impl;
 
 import io.quression.parser.define.item.IItem;
 
-public class IntegerItem implements IItem {
+public class NumberItem implements IItem {
 
-    private Integer value;
+    private Float value;
 
-    public IntegerItem(Integer value) {
+    public NumberItem(Float value) {
         this.value = value;
     }
 
-    public Integer getValue() {
+    public Float getValue() {
         return value;
     }
 
-    public IntegerItem setValue(Integer value) {
+    public NumberItem setValue(Float value) {
         this.value = value;
         return this;
     }

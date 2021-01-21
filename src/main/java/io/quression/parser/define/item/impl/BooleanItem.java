@@ -4,17 +4,17 @@ import io.quression.parser.define.item.IItem;
 
 public class BooleanItem implements IItem {
 
-    private boolean value;
+    private Boolean value;
 
-    public BooleanItem(boolean value) {
+    public BooleanItem(Boolean value) {
         this.value = value;
     }
 
-    public boolean getValue() {
+    public Boolean getValue() {
         return value;
     }
 
-    public BooleanItem setValue(boolean value) {
+    public BooleanItem setValue(Boolean value) {
         this.value = value;
         return this;
     }

@@ -10,11 +10,11 @@ items: item (ITEM_SEPARATOR item)*;
 
 item: constant | symbol | function | list | quote;
 
-symbol: IDENTIFICATION_VARIABLE;
+symbol: '\'' IDENTIFICATION_VARIABLE;
 
 function: '(' IDENTIFICATION_VARIABLE items? ')';
 
-quote: '\'' (symbol | list | function);
+quote: '\'' (list | function);
 
 constant: STRING | NUMBER | BOOLEAN | NULL;
 

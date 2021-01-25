@@ -31,6 +31,12 @@ public interface QuressionVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitItem(QuressionParser.ItemContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link QuressionParser#symbol}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSymbol(QuressionParser.SymbolContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link QuressionParser#function}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -48,10 +54,4 @@ public interface QuressionVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitConstant(QuressionParser.ConstantContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link QuressionParser#attribute}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAttribute(QuressionParser.AttributeContext ctx);
 }

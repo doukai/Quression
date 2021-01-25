@@ -40,6 +40,16 @@ public interface QuressionListener extends ParseTreeListener {
 	 */
 	void exitItem(QuressionParser.ItemContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link QuressionParser#symbol}.
+	 * @param ctx the parse tree
+	 */
+	void enterSymbol(QuressionParser.SymbolContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link QuressionParser#symbol}.
+	 * @param ctx the parse tree
+	 */
+	void exitSymbol(QuressionParser.SymbolContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link QuressionParser#function}.
 	 * @param ctx the parse tree
 	 */
@@ -69,14 +79,4 @@ public interface QuressionListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConstant(QuressionParser.ConstantContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link QuressionParser#attribute}.
-	 * @param ctx the parse tree
-	 */
-	void enterAttribute(QuressionParser.AttributeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link QuressionParser#attribute}.
-	 * @param ctx the parse tree
-	 */
-	void exitAttribute(QuressionParser.AttributeContext ctx);
 }

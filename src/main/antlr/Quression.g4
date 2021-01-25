@@ -8,21 +8,19 @@ list: '(' items? ')';
 
 items: item (ITEM_SEPARATOR item)*;
 
-item: constant | attribute | function | list | quote;
+item: constant | symbol | function | list | quote;
+
+symbol: IDENTIFICATION_VARIABLE;
 
 function: '(' IDENTIFICATION_VARIABLE items? ')';
 
-quote: '\'' list;
+quote: '\'' (symbol | list | function);
 
 constant: STRING | NUMBER | BOOLEAN | NULL;
-
-attribute: IDENTIFICATION_VARIABLE | IDENTIFICATION_VARIABLE ATTRIBUTE_SEPARATOR IDENTIFICATION_VARIABLE;
 
 IDENTIFICATION_VARIABLE: ('a' .. 'z' | 'A' .. 'Z' | '_') ('a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*;
 
 ITEM_SEPARATOR: ' ' | ',';
-
-ATTRIBUTE_SEPARATOR: '-' | '.';
 
 STRING: '"' (ESC | SAFECODEPOINT)* '"';
 

@@ -54,6 +54,18 @@ public class QuressionBaseListener implements QuressionListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSymbol(QuressionParser.SymbolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSymbol(QuressionParser.SymbolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFunction(QuressionParser.FunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -85,18 +97,6 @@ public class QuressionBaseListener implements QuressionListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitConstant(QuressionParser.ConstantContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAttribute(QuressionParser.AttributeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAttribute(QuressionParser.AttributeContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
